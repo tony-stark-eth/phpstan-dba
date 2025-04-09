@@ -76,7 +76,7 @@ final class SyntaxErrorInDibiPreparedStatementMethodRule implements Rule
             }
 
             if ($methodName === $methodReflection->getName() &&
-                ($methodReflection->getDeclaringClass()->getName() === $className || $methodReflection->getDeclaringClass()->isSubclassOf($className))) {
+                ($methodReflection->getDeclaringClass()->getName() === $className || $methodReflection->getDeclaringClass()->isSubclassOf($className))) { // @phpstan-ignore method.deprecated
                 $unsupportedMethod = false;
                 break;
             }

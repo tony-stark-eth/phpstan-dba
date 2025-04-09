@@ -89,7 +89,7 @@ final class DoctrineKeyValueStyleRule implements Rule
         $arrayArgPositions = [];
         foreach ($this->classMethods as [$className, $methodName, $arrayArgPositionsConfig]) {
             if ($methodName === $methodReflection->getName() &&
-                ($methodReflection->getDeclaringClass()->getName() === $className || $methodReflection->getDeclaringClass()->isSubclassOf($className))) {
+                ($methodReflection->getDeclaringClass()->getName() === $className || $methodReflection->getDeclaringClass()->isSubclassOf($className))) { // @phpstan-ignore method.deprecated
                 $arrayArgPositions = $arrayArgPositionsConfig;
                 $unsupportedMethod = false;
                 break;
