@@ -16,7 +16,6 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "8.0"
           - "8.1"
           - "8.2"
         db-image:
@@ -35,7 +34,7 @@ jobs:
             db-options: '--health-cmd="healthcheck.sh --connect --innodb_initialized" --health-interval=1s --health-timeout=10s --health-retries=60'
 
           # PHPStan development version
-          - php-version: "8.0"
+          - php-version: "8.1"
             db-image: "mysql:8.0"
             db-options: '--health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3'
             reflector: "pdo-mysql"
@@ -43,7 +42,7 @@ jobs:
             phpstan-version: "dev"
 
           # PDO MySQL reflector
-          - php-version: "8.0"
+          - php-version: "8.1"
             db-image: "mysql:8.0"
             db-options: '--health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3'
             reflector: "pdo-mysql"
